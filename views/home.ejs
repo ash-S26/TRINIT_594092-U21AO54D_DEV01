@@ -1,0 +1,162 @@
+<%- include("partials/header") %> 
+<section id="title">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <img class="doc-pic" src="images/charity.jpg" alt="philantropy-pic">
+          <h2 class="tagline">No act of kindness, no matter how small, is ever wasted..</h2>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h1 class="main-head">PhilChar - The most preferred destination for philanthropy.</h1>
+          <p class="intro">Our services are created to meet the needs of people who want to make a difference by getting in touch with various ngo's across rgions. </p>
+          <a href="/signin-choice"><button class="btn btn-lg btn-light btn-1" type="button" name="button">Ready for Helping ? </button></a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="features">
+    <div class = "container-fluid2"></div>
+      <div class="row">
+        <div class="col-md-4 col-sm-12">
+          <img class="image2" src="images/people.png" alt="people">
+          <h3 class="feat-head" id="1">0+</h3>
+          <p class="feat-info">No. of People Donated.</p>
+        </div>
+        <div class="col-md-4 col-sm-12 feat-img">
+          <img class="image2" src="images/ngo.png" alt="NGO building">
+          <h3 class="feat-head" id="2">0+</h3>
+          <p class="feat-info">No. of NGO's.</p>
+        </div>
+        
+        <div class="col-md-4 col-sm-12">
+          <img class="image2" src="images/money.png" alt="Money">
+          <h3 class="feat-head" id="3">$0</h3>
+          <p class="feat-info">Amount Donated</p>
+        </div>
+      </div>
+    </div>
+      <script>
+        function animate(obj, initVal, lastVal, duration) {
+           let startTime = null;
+  
+        //get the current timestamp and assign it to the currentTime variable
+        let currentTime = Date.now();
+  
+        //pass the current timestamp to the step function
+        const step = (currentTime ) => {
+  
+        //if the start time is null, assign the current time to startTime
+        if (!startTime) {
+           startTime = currentTime ;
+        }
+  
+        //calculate the value to be used in calculating the number to be displayed
+        const progress = Math.min((currentTime - startTime)/ duration, 1);
+  
+        //calculate what to be displayed using the value gotten above
+        obj.innerHTML = Math.floor(progress * (lastVal - initVal) + initVal);
+  
+        //checking to make sure the counter does not exceed the last value (lastVal)
+        if (progress < 1) {
+           window.requestAnimationFrame(step);
+        } else {
+              window.cancelAnimationFrame(window.requestAnimationFrame(step));
+           }
+        };
+        //start animating
+           window.requestAnimationFrame(step);
+        }
+        let text1 = document.getElementById('1');
+        let text2 = document.getElementById('2');
+        let text3 = document.getElementById('3');
+        const load = () => {
+           animate(text1, 0, 80, 7000);
+           animate(text2, 0, 700, 7000);
+           animate(text3, 0, 10000, 7000);
+        }
+     </script>
+
+  </section>
+
+
+  
+
+  <section class="colored-section" id="testimonials">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <h1 class="test-heading">Testimonials</h1>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="false">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <h3 class="testimonials-head">Excellent authorities of the NGO's. Good competent staff with pleasant disposition.</h3>
+              <img class="testimonials-image" src="images/man 1.jpg" alt="dog-profile">
+              <em>Jacob, New York</em>
+            </div>
+            <div class="carousel-item">
+              <h3 class="testimonials-head">Ground-breaking done by various NGO's to improve the quality of life of many people. .</h3>
+              <img class="testimonials-image" src="images/man 2.jpg" alt="lady-profile">
+              <em>Robert, Illinois</em>
+            </div>
+            <div class="carousel-item">
+              <h3 class="testimonials-head">Efficient & smiling staff members, the team of volunters is competent & cordial.With Best Wishes...</h3>
+              <img class="testimonials-image" src="images/woman 1.jpg" alt="lady-profile">
+              <em>Angela, Texas</em>
+            </div>
+            <button class="carousel-control-prev " type="button" data-target="#carouselExampleControls" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+
+            </button>
+
+          </div>
+        </div>
+      </div>
+      <div class=" value col-md-6 col-sm-12">
+        <img class="doc-patient" src="images/logo.png" alt="output_image">
+        <h2 class="testimonials-head">Delivering happiness across the world.</h2>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <section id="Book-now">
+    <h1 class="test-heading">Have a Question?</h1>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <img class="docpic2" src="images/booknow.jpg" alt="ngo picture">
+
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <form action="">
+          <h3 class="testimonials-head">Contact us</h3>
+          <input name="firstname" type="text" placeholder="your name" class="box"><br>
+          <input type="text" placeholder="your number" class="box"><br>
+          <input type="email" placeholder="your email" class="box"><br>
+
+          <input name="query" type="text" placeholder = "Your Query" class="box"><br>
+          <input class="btn btn-2" type="button" onclick="clickAlert()" value="Book now">
+
+        </form>
+
+      </div>
+
+    </div>
+  </section> 
+  <script>
+    $("body").attr("onload","load()");
+    function clickAlert() {
+    var firstName = document.getElementsByName("firstname")[0].value;
+    alert(" Greetings "+firstName+"!\r\n Your query has been noted.\r\n We will try to reach out to you as soon as possible");
+
+}
+  </script>
+<%- include("partials/footer") %>

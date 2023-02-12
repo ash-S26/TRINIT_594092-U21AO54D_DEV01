@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+
+<div class="col-md-6 col-sm-12">
+    <form action="/collect_data" method="post">
+      <h3 class="testimonials-head">About you</h3>
+      <input name="name" type="text" placeholder="Full Name" class="box"><br>
+      <input name="contact" type="text" placeholder="Contact Number" class="box"><br>
+      <input name="address" type="text" placeholder="Your address" class="box"><br>
+      <input name="email" type="email" placeholder="Email" class="box"><br>
+      <div class="">
+        <strong class = "sign-text">Select Intrests:</strong>
+        </br>
+        <select name="interests" id="multiple-checkboxes" multiple="multiple">
+            <option value="Children">Children</option>
+            <option value="Health">Health</option>
+            <option value="Education">Education</option>
+            <option value="Environment advocacy">Environment advocacy</option>
+            <option value="Emergency relief">Emergency relief</option>
+        </select>
+    </div>
+
+      <br>
+      <input class="btn btn-2 datasubmit" type="submit" >
+
+    </form>
+
+
+
+  </div>
+
+  <script>
+       $(document).ready(function() {
+        $('#multiple-checkboxes').multiselect({
+          includeSelectAllOption: true,
+        });
+    });
+  </script>
+
+
+
+
+
+
+
+<%- include('partials/footer') %>

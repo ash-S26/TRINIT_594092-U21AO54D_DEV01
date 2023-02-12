@@ -1,0 +1,77 @@
+<%- include('partials/header') %>
+
+
+    <form action="/collect_data_ngo" method="post">
+      <h3 class="testimonials-head datasubmit">About you</h3>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <p>Name</p>
+            <input name="name" type="text" placeholder="Name" class="box">
+            <p>Contact Number</p>
+            <input name="number" type="text" placeholder="Contact Number" class="box">
+            <p>Address</p>
+            <input name="address" type="text" placeholder="Your address" class="box">
+            <p>Email-Id</p>
+            <input name="email" type="email" placeholder="Email" class="box">
+            <p>Mission</p>
+            <input name="mission" type="text" placeholder="Your Mission" class="box">
+            <p>Vision</p>
+            <input name="vision" type="text" placeholder="Your Vision" class="box">
+            <p>Funding Needs</p>
+            <input name="fundingNeeds" type="text" placeholder="fundingNeeds" class="box">
+            <p>History</p>
+            <input name="history" type="text" placeholder="Your history" class="box"><br>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <p>Previous Work</p>
+            <input name="previousWork" type="text" placeholder="previousWork" class="box">
+            <p>How to Achieve Goal</p>
+            <input name="howToAchiveGoal" type="text" placeholder="howToAchieveGoal" class="box">
+            <p>NGO-ID</p>
+            <input name="ngoid" type="text" placeholder="ngoid" class="box">
+            <p>Social URL</p>
+            <input name="socialUrl" type="text" placeholder="socialUrl" class="box">
+            <p>Website</p>
+            <input name="website" type="text" placeholder="website" class="box">
+            <p>Achievements</p>
+            <input name="achievement" type="text" placeholder="achievement" class="box">
+            <p>Area of Work</p>
+            <div class="">
+              <strong class = "sign-text">Area of work:</strong>
+              </br>
+              <select name="work" id="multiple-checkboxes" multiple="multiple">
+                  <option value="Children">Children</option>
+                  <option value="Health">Health</option>
+                  <option value="Education">Education</option>
+                  <option value="Environment advocacy">Environment advocacy</option>
+                  <option value="Emergency relief">Emergency relief</option>
+              </select>
+            </div>
+        </div>
+      </div>
+      
+      <br>
+      <input class="btn btn-2 datasubmit" type="submit" >
+
+    </form>
+
+
+
+
+
+  <script>
+       $(document).ready(function() {
+        $('#multiple-checkboxes').multiselect({
+          includeSelectAllOption: true,
+        });
+    });
+  </script>
+
+
+
+
+
+
+
+<%- include('partials/footer') %>

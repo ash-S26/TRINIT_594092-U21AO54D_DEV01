@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+
+<form action="/listofngo" method = "post">
+  <div class="">
+    <strong class = "sign-text">Area of work:</strong>
+    </br>
+    <select name="work" id="multiple-checkboxes" multiple="multiple">
+        <option value="Children">Children</option>
+        <option value="Health">Health</option>
+        <option value="Education">Education</option>
+        <option value="Environment advocacy">Environment advocacy</option>
+        <option value="Emergency relief">Emergency relief</option>
+    </select>
+  </div>
+  <button type = "submit" class = "btn btn-primary">Submit</button>
+</form>
+
+<% for(var i = 0; i< postArray.length; i++){ %>
+
+    <div class="card" style="width: 30rem;float: left;margin: 20px;text-align: center;">
+        <img class="card-img-top" src="images/logo.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= postArray[i].name %></h5>
+          <p class="card-text"><%= postArray[i].mission %></p>
+          <a href="/listofngo/<%= postArray[i].ngoid %>" class="btn btn-primary">More Info</a>
+        </div>
+      </div>    
+
+
+    <!-- <div style = "display : inline;" class="card_1">
+        <br class="line_break">
+        <img src="images/logo.png" class="image3 center" alt="logo">
+        <div class="card-body">
+        <h2 class="card-title"><%= postArray[i].name %></h2>
+        <p class="card-text"><%= postArray[i].address %></p>
+        <a href="/listofngo/<%= postArray[i].ngoid %>" class="btn btn-primary">More Info</a>
+        </div>
+    </div> -->
+<% } %>
+
+<script>
+  $(document).ready(function() {
+   $('#multiple-checkboxes').multiselect({
+     includeSelectAllOption: true,
+   });
+});
+</script>
+
+
+<%- include('partials/footer') %>
