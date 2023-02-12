@@ -1,5 +1,5 @@
-const stripeSecretKey = "sk_test_51Ma18ESDheG8QHDUvGfFjdpYiznWvAjkyMB5va9yofCzb8YWK3kXvXjoR6gqofqprH0j5H8ehDG5eZd3K13SfORN00TbtS7wjb"
-const stripePublicKey = "pk_test_51Ma18ESDheG8QHDU3DZfoM3zyJhqj7DZYkfD1OvVvfs2bfGZ9GTOaThpI4LIylSGsDY7rh7ShtLP6YmbhBEzei9m00FDIuCiuS"
+const stripeSecretKey = "" // put your stripe secret key
+const stripePublicKey = ""  // put your stripe public key
   
 
 require('dotenv').config();
